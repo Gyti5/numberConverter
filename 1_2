@@ -1,0 +1,11 @@
+Define what was done and what would you consider a great improvement for the project
+you wrote.
+
+
+Parašiau paprastą programą, kuri priema romėniškus skaičius ir gražiną arabiškus.
+
+Patobulinimai, kurie, manau, padarytų šį projektą geresnį:
+  Galimybė daryti ir kitokio tipo requestus, pvz POST
+  Priimti po daugiau negu 1 skaičių vienu metu, pvz json formatu per body atsiųstų skaičių aibe
+  Projekto įkelimas i Docker konteinerį
+  
