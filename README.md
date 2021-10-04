@@ -8,7 +8,7 @@ Server is running on port 3000
 
 Endpoint:
 
-To post Roman number:
+To get arabic number:
 
   GET: http://localhost:3000/converter/{number}
   
