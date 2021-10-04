@@ -5,6 +5,7 @@ import (
 	"github.com/gorilla/mux"
 	"net/http"
 	"numberConverter/utils"
+	"strings"
 	"sync"
 )
 
@@ -13,7 +14,7 @@ var wg sync.WaitGroup
 func HandleRequest() http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 		ch := make(chan uint64)
-		number := mux.Vars(r)["number"]
+		number := strings.ToUpper(mux.Vars(r)["number"])
 		w.Header().Set("Content-Type", "application/json")
 
 		wg.Add(1)
@@ -37,6 +38,10 @@ func convert(number string, ch chan uint64) {
 	var complexNumber = false
 
 	for i, char := range number {
+		if 1 > numberMap[string(char)] {
+			ch <- 0
+			return
+		}
 		if complexNumber {
 			complexNumber = false
 			continue
